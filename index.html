@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ameee | Lập trình nhúng</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <a class="logo" href="#home">Ameee</a>
+  <button id="menuBtn" class="menu-btn" aria-label="Mở menu" aria-expanded="false">☰</button>
+  <nav id="nav" class="nav">
+    <a href="#about">Giới thiệu</a>
+    <a href="#skills">Kỹ năng</a>
+    <a href="#projects">Dự án</a>
+    <a href="#contact">Liên hệ</a>
+    <button id="themeBtn" class="theme-btn" aria-label="Đổi giao diện sáng/tối">🌙</button>
+  </nav>
+</header>
+
+<main>
+  <section id="home" class="hero reveal">
+    <h1>Mình viết code chạy trên chip.</h1>
+    <p>Sinh viên lập trình nhúng, thích những thứ đo được, chạy được và nhanh hơn hôm qua.</p>
+    <a class="btn" href="#projects">Xem dự án</a>
+  </section>
+
+  <section id="about" class="section reveal">
+    <h2>Giới thiệu</h2>
+    <p>Mình là Ameee, đang học lập trình nhúng. Mình làm việc chủ yếu với ESP32 và vi điều khiển, viết firmware bằng C/C++ và thích tối ưu thời gian thực.</p>
+  </section>
+
+  <section id="skills" class="section reveal">
+    <h2>Kỹ năng</h2>
+    <ul class="skills">
+      <li>C / C++</li><li>ESP32-S3</li><li>Arduino</li><li>Điều khiển PID</li>
+      <li>HTML / CSS</li><li>JavaScript</li><li>Git / GitHub</li>
+    </ul>
+  </section>
+
+  <section id="projects" class="section reveal">
+    <h2>Dự án</h2>
+    <input id="search" type="search" placeholder="Tìm theo tên hoặc từ khóa..." aria-label="Tìm dự án">
+    <div class="tags" id="tags">
+      <button class="tag active" data-tag="all">Tất cả</button>
+      <button class="tag" data-tag="esp32">ESP32</button>
+      <button class="tag" data-tag="web">Web</button>
+      <button class="tag" data-tag="dieukhien">Điều khiển</button>
+    </div>
+    <div class="grid" id="grid">
+      <article class="card" data-tag="esp32 dieukhien">
+        <h3>Xe dò line tốc độ cao</h3>
+        <p>ESP32-S3, đọc cảm biến bằng ADC DMA, điều khiển PD và máy trạng thái.</p>
+      </article>
+      <article class="card" data-tag="web">
+        <h3>Trang web giới thiệu bản thân</h3>
+        <p>HTML, CSS Flexbox/Grid và JavaScript thuần, đây chính là trang này.</p>
+      </article>
+      <article class="card" data-tag="esp32">
+        <h3>Trạm đo nhiệt độ không dây</h3>
+        <p>ESP32 đọc cảm biến, gửi dữ liệu qua Wi-Fi lên bảng hiển thị. (Mẫu, hãy sửa lại)</p>
+      </article>
+    </div>
+    <p id="empty" class="empty" hidden>Không có dự án nào khớp. Hãy thử từ khóa khác.</p>
+  </section>
+
+  <section id="contact" class="section reveal">
+    <h2>Liên hệ</h2>
+    <form id="form" novalidate>
+      <label>Họ tên <input id="name" type="text" autocomplete="name"></label>
+      <small class="err" id="nameErr"></small>
+      <label>Email <input id="email" type="email" autocomplete="email"></label>
+      <small class="err" id="emailErr"></small>
+      <label>Lời nhắn <textarea id="msg" rows="4" maxlength="300"></textarea></label>
+      <small class="count"><span id="count">0</span>/300 ký tự</small>
+      <small class="err" id="msgErr"></small>
+      <button class="btn" type="submit">Gửi lời nhắn</button>
+      <p id="ok" class="ok" hidden>Đã gửi lời nhắn. Cảm ơn bạn!</p>
+    </form>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>© <span id="year"></span> Ameee. Bài thực hành 01.</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
